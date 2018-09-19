@@ -3,7 +3,9 @@
     <aside class="col-md-4">
       <%= form_for(@task) do |f| %>
         <div class="form-group">
-          <%= f.select :status, [["完了","完了"], ["進行中","進行中"]] %> <!-- 追加 -->
+          <%= f.label :status, 'ステータス' %>
+          <%= f.text_area :status, class: 'form-control', rows: 1 %>
+          <%= f.label :content, 'タスク' %>
           <%= f.text_area :content, class: 'form-control', rows: 5 %>
         </div>
         <%= f.submit 'Post', class: 'btn btn-primary btn-block' %>
